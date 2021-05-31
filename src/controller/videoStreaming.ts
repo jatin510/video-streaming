@@ -1,7 +1,8 @@
 import fs from 'fs';
+import path from 'path';
 
 export async function videoStream(request: any, response: any) {
-  const video = '../../public/TDD.mp4';
+  const video = path.join(__dirname, '../../public/TDD.mp4');
   const stat = fs.statSync(video);
   const range = request.headers.range;
   console.log(range);
